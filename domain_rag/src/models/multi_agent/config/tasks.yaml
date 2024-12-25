@@ -1,0 +1,70 @@
+domain_qa_task_1:
+  description: >
+    Provide a detailed and relevant document summary corresponding to the user query:
+    
+    USER QUERY: ```{query}```
+    CONTEXT: ```{document_1}```
+
+    If you feel the answer is not found in the context, reply
+    "I could not find any relevant answer for the query". Ensure your response is detailed and relevant, 
+    as it will be summarized later by a text-summariser.
+  expected_output: >
+    A Detailed Summarized Answer to the question in string format as response_1.
+  async_execution: true
+
+domain_qa_task_2:
+  description: >
+    Provide a detailed and relevant document summary corresponding to the user query:
+    
+    USER QUERY: ```{query}```
+    CONTEXT: ```{document_2}```
+
+    If you feel the answer is not found in the context, reply
+    "I could not find any relevant answer for the query". Ensure your response is detailed and relevant, 
+    as it will be summarized later by a text-summariser.
+  expected_output: >
+    A Detailed Summarized Answer to the question in string format as response_2.
+  async_execution: true
+
+domain_qa_task_3:
+  description: >
+    Provide a detailed and relevant document summary corresponding to the user query:
+    
+    USER QUERY: ```{query}```
+    CONTEXT: ```{document_3}```
+
+    If you feel the answer is not found in the context, reply
+    "I could not find any relevant answer for the query". Ensure your response is detailed and relevant, 
+    as it will be summarized later by a text-summariser.
+  expected_output: >
+    A Detailed Summarized Answer to the question in string format as response_3.
+  async_execution: true
+
+hallucination_grader_task:
+  description: >
+    Evaluate the answers provided by the Clinical Domain QnA Experts for their relevance, correctness, and adherence to the provided context.
+    
+    USER QUERY: ```{query}```
+    CONTEXTS: ```{document_1}, {document_2}, {document_3}```
+
+    If any of the expert responses contain information not found in the provided context, flag them as potential hallucinations. 
+    For each expert response, provide a score from 1 to 5 indicating the likelihood of hallucination (1 = highly unlikely, 5 = highly likely), 
+    along with an explanation for the score. 
+    
+    Finally, suggest the most trustworthy response(s) if applicable.
+  expected_output: >
+    A structured evaluation of each expert response, including scores and explanations, and a suggestion of the most trustworthy response(s).
+  async_execution: false
+
+answer_writing_task:
+  description: >
+    Combine and refine the answers provided by the Clinical Domain QnA experts based on their relevance, 
+    correctness, and adherence to the provided context. 
+    Use the feedback from the Hallucination Grader Agent to ensure the response is accurate and concise.
+
+    USER QUERY: ```{query}```
+
+    Ensure the final answer is a concise, accurate, and relevant response to the user query, not exceeding 100 words.
+  expected_output: >
+    A concise and accurate answer to the user query, synthesized from the expert responses and adjusted based on hallucination grading.
+  async_execution: false

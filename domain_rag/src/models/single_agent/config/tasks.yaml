@@ -1,0 +1,15 @@
+domain_task:
+  description: >
+    Provide a concise, relevant summary of the user query based on multiple contexts provided:
+    
+    USER QUERY: ```{query}```
+    CONTEXT-1: ```{document_1}```
+    CONTEXT-2: ```{document_2}```
+    CONTEXT-3: ```{document_3}```
+
+    If you feel the answer is not found in the contexts, reply with 
+    "I could not find any relevant answer for the query". Ensure your response 
+    is detailed yet concise, fitting within 100 words.
+  expected_output: >
+    A detailed and relevant answer to the user query in a string format, with less than 100 words.
+  async_execution: false
