@@ -1,0 +1,11 @@
+langchain-openai==0.1.7
+faiss-cpu
+crewai==0.36.0
+ragas==0.1.10
+#"unstructured[pdf]"==0.14.10
+pikepdf==5.6.1
+pillow-heif==0.16.0 
+opencv-python==4.9.0.80 
+onnx==1.16.0
+PyMuPDF==1.24.7
+seaborn==0.13.2
